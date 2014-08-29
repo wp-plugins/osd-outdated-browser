@@ -3,7 +3,7 @@
  * Plugin Name: OSD Outdated Browser
  * Plugin URI: http://outsidesource.com
  * Description: Notifies users that they are using an outdated browser.
- * Version: 1.0
+ * Version: 1.1
  * Author: OSD Web Development Team
  * Author URI: http://outsidesource.com
  * License: GPL2v2
@@ -29,14 +29,9 @@ class OSD_Outdated_Browser extends WP_Widget {
         $this->options['message'] = get_option('osd_outdated_browser_message');
         
         // Only load in styles and scripts if Outdated Browser is being used
-        if (is_active_widget(false, false, "osd_outdated_browser_widget", true)) {
-            if (!isset($_COOKIE['osd_outdated_browser'])) {
-                if ($this->get_val('browser') == 'none') {
-                    return;
-                }
-                add_action('wp_head', array($this, 'osd_outdated_browser_style'));
-                add_action('wp_footer', array($this, 'osd_outdated_browser_script'));
-            }
+        if ($this->check_show_popup()) {
+            add_action('wp_head', array($this, 'osd_outdated_browser_style'));
+            add_action('wp_footer', array($this, 'osd_outdated_browser_script'));            
         }
     }
 
@@ -61,6 +56,29 @@ class OSD_Outdated_Browser extends WP_Widget {
             ");
 
 
+    // Returns true if the popup should be shown
+    private function check_show_popup() {
+        if (!is_active_widget(false, false, "osd_outdated_browser_widget", true)) {
+            return false;
+        } else if (isset($_COOKIE['osd_outdated_browser'])) {
+            return false;
+        }
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        if ($this->get_val('browser') == 'none') {
+            return false;
+        } else if ($this->get_val('browser') == 'all') {
+            return true;
+        } else if (preg_match("/Trident\/.*rv:([0-9]{2,2})\.0/", $userAgent, $match) || 
+                preg_match("/MSIE\s([0-9]{1,2})\.0/", $userAgent, $match)) {
+            if (stripos($userAgent, "opera") !== false) {
+                return false;
+            } else if ($match[1] <= $this->get_val('browser')) {
+                return true;
+            }
+        }
+    }
+
+
     // Returns the default value if one is not set
     private function get_val($prop) {
         if ($prop == "message" && !$this->options[$prop]) {
@@ -72,22 +90,8 @@ class OSD_Outdated_Browser extends WP_Widget {
 
     // Outputs the content of the widget
     public function widget($args, $instance) {
-        if (isset($_COOKIE['osd_outdated_browser'])) {
-            return;
-        }
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-
-        if ($this->get_val('browser') == 'none') {
-            return;
-        } else if ($this->get_val('browser') == 'all') {
+        if ($this->check_show_popup()) {
             $this->output_html($this->options);
-        } else if (preg_match("/Trident\/.*rv:([0-9]{2,2})\.0/", $userAgent, $match) || 
-                preg_match("/MSIE\s([0-9]{1,2})\.0/", $userAgent, $match)) {
-            if (stripos($userAgent, "opera") !== false) {
-                return;
-            } else if ($match[1] <= $this->get_val('browser')) {
-                $this->output_html($options);
-            }
         }
     }
 

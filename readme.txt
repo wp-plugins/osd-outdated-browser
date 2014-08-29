@@ -37,6 +37,9 @@ Yes, as users ask us questions.
 
 == Changelog ==
 
+= 1.1 =
+* Fixed a logic bug where javascripts and styles were being inserted regardless of the banner showing or not.
+
 = 1.0 =
 * Initial creation of the OSD Outdated Browser
 
