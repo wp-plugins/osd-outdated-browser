@@ -2,8 +2,8 @@
 Contributors: osdwebdev
 Tags: outdated, old, browser
 Requires at least: 3.4
-Tested up to: 3.9
-Stable tag: 1.1
+Tested up to: 4.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,9 @@ Yes, as users ask us questions.
 3. Admin Settings Screen
 
 == Changelog ==
+
+= 1.2 =
+* Fixed a style bug in IE.
 
 = 1.1 =
 * Fixed a logic bug where javascripts and styles were being inserted regardless of the banner showing or not.
