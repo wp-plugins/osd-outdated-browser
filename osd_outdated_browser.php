@@ -3,7 +3,7 @@
  * Plugin Name: OSD Outdated Browser
  * Plugin URI: http://outsidesource.com
  * Description: Notifies users that they are using an outdated browser.
- * Version: 1.1
+ * Version: 1.2
  * Author: OSD Web Development Team
  * Author URI: http://outsidesource.com
  * License: GPL2v2
