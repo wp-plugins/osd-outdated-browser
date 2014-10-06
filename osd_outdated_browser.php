@@ -136,9 +136,10 @@ class OSD_Outdated_Browser extends WP_Widget {
 
 
 // Register OSD Outdated Browser Widget
-add_action('widgets_init', function() {
+function register_osd_outdated_browser_widget() {
     register_widget('OSD_Outdated_Browser');
-});
+}
+add_action('widgets_init', 'register_osd_outdated_browser_widget');
 
 
 // Include options

@@ -3,25 +3,29 @@ Contributors: osdwebdev
 Tags: outdated, old, browser
 Requires at least: 3.4
 Tested up to: 4.0
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-OSD Outdated Browser plugin allows you to display a custom banner for users using old browsers.
+OSD Outdated Browser widget allows you to display a custom banner for users using old browsers.
 
 == Description ==
 
-OSD Outdated Browser plugin allows you to display a custom banner for users using old browsers.  The banner is fully customizable and also exposes filters for developers to use.
+OSD Outdated Browser widget allows you to display a custom banner for users using old browsers.  
+The banner is fully customizable and also exposes filters for developers to use. All a user needs to do
+is install/activate the plugin, set up the proper settings, then add the OSD Outdated Browser widget 
+to a widget area.
 
 == Installation ==
 
 1. Upload the osd-outdated-browser directory to your `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Visit the settings page under Settings > OSD Outdated Browser
-4. If the default message is not used, be sure to include an element with the id "osd-outdated-browser-close" in order to close the banner and set a cookie based on user preferences.
-5. Styles can be easily overridden in the theme's style sheet (style.css) or in the WYSIWYG editor
-6. If you desire more control over how the banner is displayed, a WordPress filter is available. just use the following code: add_filter('osd-outdated-browser', function($content, $args) {}, 10, 2);
-7. Additionally, the WordPress filters content_edit_pre and content_save_pre are applied to the banner content.
+4. Add the OSD Outdated Browser widget to any widget area in your theme.
+5. If the default message is not used, be sure to include an element with the id "osd-outdated-browser-close" in order to close the banner and set a cookie based on user preferences.
+6. Styles can be easily overridden in the theme's style sheet (style.css) or in the WYSIWYG editor
+7. If you desire more control over how the banner is displayed, a WordPress filter is available. just use the following code: add_filter('osd-outdated-browser', function($content, $args) {}, 10, 2);
+8. Additionally, the WordPress filters content_edit_pre and content_save_pre are applied to the banner content.
 
 == Frequently Asked Questions ==
 
@@ -36,6 +40,11 @@ Yes, as users ask us questions.
 3. Admin Settings Screen
 
 == Changelog ==
+
+= 1.3 =
+* Fixed a bug where older versions of PHP would not work.
+* Fixed a minor style issue
+* Updated instructions because they were terrible and mentioned nothing of being a widget
 
 = 1.2 =
 * Fixed a style bug in IE.
