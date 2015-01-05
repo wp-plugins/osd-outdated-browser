@@ -11,10 +11,10 @@ OSD Outdated Browser widget allows you to display a custom banner for users usin
 
 == Description ==
 
-OSD Outdated Browser widget allows you to display a custom banner for users using old browsers.  
+OSD Outdated Browser allows you to display a custom banner for users using old browsers.  
 The banner is fully customizable and also exposes filters for developers to use. All a user needs to do
-is install/activate the plugin, set up the proper settings, then add the OSD Outdated Browser widget 
-to a widget area.
+is install/activate the plugin, set up the proper settings, then either add the OSD Outdated Browser widget 
+to a widget area or use the [osd_outdated_browser] shortcode.
 
 == Installation ==
 
