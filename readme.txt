@@ -3,7 +3,7 @@ Contributors: osdwebdev
 Tags: outdated, old, browser
 Requires at least: 3.4
 Tested up to: 4.0
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ OSD Outdated Browser widget allows you to display a custom banner for users usin
 
 == Description ==
 
-OSD Outdated Browser widget allows you to display a custom banner for users using old browsers.
+OSD Outdated Browser widget allows you to display a custom banner for users using old browsers.  
 The banner is fully customizable and also exposes filters for developers to use. All a user needs to do
 is install/activate the plugin, set up the proper settings, then add the OSD Outdated Browser widget 
 to a widget area.
@@ -40,6 +40,10 @@ Yes, as users ask us questions.
 3. Admin Settings Screen
 
 == Changelog ==
+
+= 1.4 =
+* Fixed minor styling bug
+* Enabled use with a shortcode
 
 = 1.3 =
 * Fixed a bug where older versions of PHP would not work.

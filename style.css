@@ -1,5 +1,5 @@
 /* Styles for OSD Outdated Browser */
-.osd-outdated-browser { position: fixed; width: 100%; top: 0; padding: 20px; z-index: 1000; font-family: Helvetica, Sans-serif; font-size: 13px; color: ##FONT-COLOR##; background: ##BG-COLOR##; box-shadow: 0px 0px 10px rgba(0,0,0,.5); }
+.osd-outdated-browser { position: fixed; width: 100%; left: 0; top: 0; padding: 20px; z-index: 1000; font-family: Helvetica, Sans-serif; font-size: 13px; color: ##FONT-COLOR##; background: ##BG-COLOR##; box-shadow: 0px 0px 10px rgba(0,0,0,.5); }
 .osd-outdated-browser img { outline: none; border: 0; }
 .osd-outdated-browser-images { margin-top: 5px; }
 .osd-outdated-browser-title { font-size: 1.4em; font-weight: bold; margin-bottom: 5px; }

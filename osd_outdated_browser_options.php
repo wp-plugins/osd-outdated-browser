@@ -33,10 +33,11 @@ function osd_outdated_browser_options_callback() {
             do_settings_sections('osd_outdated_browser_options');
             $options = get_option('osd_outdated_browser_options');
             $options['message'] = get_option('osd_outdated_browser_message');
+            global $osd_outdated_browser_instance;
 
-            foreach (OSD_Outdated_Browser::$defaults as $key => $value) {
+            foreach ($osd_outdated_browser_instance->defaults as $key => $value) {
                 if ($key == "message") {
-                    $value = str_replace("###URL###", plugins_url(), OSD_Outdated_Browser::$defaults['message']);
+                    $value = str_replace("###URL###", plugins_url(), $osd_outdated_browser_instance->defaults['message']);
                 }
                 $options[$key] = ($options[$key]) ? $options[$key] : $value;
             }
