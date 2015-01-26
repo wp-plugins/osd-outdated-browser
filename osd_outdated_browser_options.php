@@ -7,6 +7,7 @@
 if (is_admin()) {
     add_action('admin_menu', 'osd_outdated_browser_options');
     add_action('admin_init', 'osd_outdated_browser_register_options');
+    add_filter("plugin_action_links_osd-outdated-browser/osd_outdated_browser.php", "osd_outdated_browser_settings_link"); // Add settings link to plugins page
 }
 
 // Add submenu of options
@@ -109,4 +110,11 @@ function osd_outdated_browser_register_options() {
     register_setting('osd_outdated_browser_options', 'osd_outdated_browser_options');
     register_setting('osd_outdated_browser_options', 'osd_outdated_browser_message', 'apply_content_edit_filter');
 }
-?>
+
+
+// Show settings link in plugins screen
+function osd_outdated_browser_settings_link($links) {
+    $settings_link = "<a href='admin.php?page=osd-outdated-browser-options'>Settings</a>";
+    array_unshift($links, $settings_link); 
+    return $links; 
+}
